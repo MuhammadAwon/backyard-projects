@@ -1,0 +1,24 @@
+Step 1: Scrape the data of the first 30 pages
+
+Step 2: Filter interesting data
+• Name of the food
+• Image of the food
+• Calories*
+• Green Point*
+• Blue Point*
+• Purple Point*
+• Summary
+• The recipe Key*
+
+Step 3: Visualise
+• Use the appropriate visualisation method to provide information on
+• Calories distribution
+• Point distribution (considering all three colours)
+• Recepie key distribution
+
+Step 4: Interaction with the user
+• Your code should be able to perform the following task:
+• Input a calorie range
+• Input a point range for the colour of choice
+• Output the first 5 foods sorted based on calories, with their image and their
+summary.

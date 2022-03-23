@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)https://dash.gallery/python-docs-dash-snippets/plotly-express -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">input:invalid {
+    outline: solid red;
+}
+
+input:valid {
+    outline: none black;
+}</style><style type="text/css">.Select,.Select-control{position:relative}.Select-control,.Select-input>input{width:100%;cursor:default;outline:0}.Select-arrow-zone,.Select-clear-zone,.Select-loading-zone{text-align:center;cursor:pointer}.Select,.Select div,.Select input,.Select span{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.Select.is-disabled>.Select-control{background-color:#f9f9f9}.Select.is-disabled>.Select-control:hover{box-shadow:none}.Select.is-disabled .Select-arrow-zone{cursor:default;pointer-events:none;opacity:.35}.Select-control{background-color:#fff;border-radius:4px;border:1px solid #ccc;color:#333;display:table;border-spacing:0;border-collapse:separate;height:36px;overflow:hidden}.is-searchable.is-focused:not(.is-open)>.Select-control,.is-searchable.is-open>.Select-control{cursor:text}.Select-control:hover{box-shadow:0 1px 0 rgba(0,0,0,.06)}.Select-control .Select-input:focus{outline:0}.is-open>.Select-control{border-bottom-right-radius:0;border-bottom-left-radius:0;background:#fff;border-color:#b3b3b3 #ccc #d9d9d9}.is-open>.Select-control .Select-arrow{top:-2px;border-color:transparent transparent #999;border-width:0 5px 5px}.is-focused:not(.is-open)>.Select-control{border-color:#007eff;box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 0 3px rgba(0,126,255,.1)}.Select--single>.Select-control .Select-value,.Select-placeholder{bottom:0;color:#aaa;left:0;line-height:34px;padding-left:10px;padding-right:10px;position:absolute;right:0;top:0;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.has-value.Select--single>.Select-control .Select-value .Select-value-label,.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label{color:#333}.has-value.Select--single>.Select-control .Select-value a.Select-value-label,.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value a.Select-value-label{cursor:pointer;text-decoration:none}.has-value.Select--single>.Select-control .Select-value a.Select-value-label:focus,.has-value.Select--single>.Select-control .Select-value a.Select-value-label:hover,.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value a.Select-value-label:focus,.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value a.Select-value-label:hover{color:#007eff;outline:0;text-decoration:underline}.Select-input{height:34px;padding-left:10px;padding-right:10px;vertical-align:middle}.Select-input>input{background:none;border:0;box-shadow:none;display:inline-block;font-family:inherit;font-size:inherit;margin:0;line-height:14px;padding:8px 0 12px;-webkit-appearance:none}.Select-loading,.Select-loading-zone{width:16px;position:relative;vertical-align:middle}.is-focused .Select-input>input{cursor:text}.has-value.is-pseudo-focused .Select-input{opacity:0}.Select-control:not(.is-searchable)>.Select-input{outline:0}.Select-loading-zone{display:table-cell}.Select-loading{-webkit-animation:Select-animation-spin .4s infinite linear;-o-animation:Select-animation-spin .4s infinite linear;animation:Select-animation-spin .4s infinite linear;height:16px;box-sizing:border-box;border-radius:50%;border:2px solid #ccc;border-right-color:#333;display:inline-block}.Select-clear-zone{-webkit-animation:Select-animation-fadeIn .2s;-o-animation:Select-animation-fadeIn .2s;animation:Select-animation-fadeIn .2s;color:#999;display:table-cell;position:relative;vertical-align:middle;width:17px}.Select-clear-zone:hover{color:#D0021B}.Select-clear{display:inline-block;font-size:18px;line-height:1}.Select--multi .Select-clear-zone{width:17px}.Select-arrow-zone{display:table-cell;position:relative;vertical-align:middle;width:25px;padding-right:5px}.Select--multi .Select-multi-value-wrapper,.Select-arrow{display:inline-block}.Select-arrow{border-color:#999 transparent transparent;border-style:solid;border-width:5px 5px 2.5px;height:0;width:0;position:relative}.Select-arrow-zone:hover>.Select-arrow,.is-open .Select-arrow{border-top-color:#666}.Select .Select-aria-only{display:inline-block;height:1px;width:1px;margin:-1px;clip:rect(0,0,0,0);overflow:hidden;float:left}.Select-noresults,.Select-option{box-sizing:border-box;display:block;padding:8px 10px}@-webkit-keyframes Select-animation-fadeIn{from{opacity:0}to{opacity:1}}@keyframes Select-animation-fadeIn{from{opacity:0}to{opacity:1}}.Select-menu-outer{border-bottom-right-radius:4px;border-bottom-left-radius:4px;background-color:#fff;border:1px solid #ccc;border-top-color:#e6e6e6;box-shadow:0 1px 0 rgba(0,0,0,.06);box-sizing:border-box;margin-top:-1px;max-height:200px;position:absolute;top:100%;width:100%;z-index:1;-webkit-overflow-scrolling:touch}.Select-menu{max-height:198px;overflow-y:auto}.Select-option{background-color:#fff;color:#666;cursor:pointer}.Select-option:last-child{border-bottom-right-radius:4px;border-bottom-left-radius:4px}.Select-option.is-selected{background-color:#f5faff;background-color:rgba(0,126,255,.04);color:#333}.Select-option.is-focused{background-color:#ebf5ff;background-color:rgba(0,126,255,.08);color:#333}.Select-option.is-disabled{color:#ccc;cursor:default}.Select-noresults{color:#999;cursor:default}.Select--multi .Select-input{vertical-align:middle;margin-left:10px;padding:0}.Select--multi.has-value .Select-input{margin-left:5px}.Select--multi .Select-value{background-color:#ebf5ff;background-color:rgba(0,126,255,.08);border-radius:2px;border:1px solid #c2e0ff;border:1px solid rgba(0,126,255,.24);color:#007eff;display:inline-block;font-size:.9em;line-height:1.4;margin-left:5px;margin-top:5px;vertical-align:top}.Select--multi .Select-value-icon,.Select--multi .Select-value-label{display:inline-block;vertical-align:middle}.Select--multi .Select-value-label{border-bottom-right-radius:2px;border-top-right-radius:2px;cursor:default;padding:2px 5px}.Select--multi a.Select-value-label{color:#007eff;cursor:pointer;text-decoration:none}.Select--multi a.Select-value-label:hover{text-decoration:underline}.Select--multi .Select-value-icon{cursor:pointer;border-bottom-left-radius:2px;border-top-left-radius:2px;border-right:1px solid #c2e0ff;border-right:1px solid rgba(0,126,255,.24);padding:1px 5px 3px}.Select--multi .Select-value-icon:focus,.Select--multi .Select-value-icon:hover{background-color:#d8eafd;background-color:rgba(0,113,230,.08);color:#0071e6}.Select--multi .Select-value-icon:active{background-color:#c2e0ff;background-color:rgba(0,126,255,.24)}.Select--multi.is-disabled .Select-value{background-color:#fcfcfc;border:1px solid #e3e3e3;color:#333}.Select--multi.is-disabled .Select-value-icon{cursor:not-allowed;border-right:1px solid #e3e3e3}.Select--multi.is-disabled .Select-value-icon:active,.Select--multi.is-disabled .Select-value-icon:focus,.Select--multi.is-disabled .Select-value-icon:hover{background-color:#fcfcfc}@keyframes Select-animation-spin{to{transform:rotate(1turn)}}@-webkit-keyframes Select-animation-spin{to{-webkit-transform:rotate(1turn)}}</style><style type="text/css">.dash-logout-btn {
+    padding: 1rem;
+    background-color: #119DFF;
+    border: 1px solid #119DFF;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dash-logout-btn:hover, .dash-logout-btn:focus {
+    background-color: #0d76bf;
+    border: 1px solid #0d76bf;
+}
+
+.dash-logout-frame {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+</style><style type="text/css">.PresetDateRangePicker_panel {
+  padding: 0 22px 11px
+}
+.PresetDateRangePicker_button {
+  position: relative;
+  height: 100%;
+  text-align: center;
+  background: 0 0;
+  border: 2px solid #00a699;
+  color: #00a699;
+  padding: 4px 12px;
+  margin-right: 8px;
+  font: inherit;
+  font-weight: 700;
+  line-height: normal;
+  overflow: visible;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: pointer
+}
+.PresetDateRangePicker_button:active {
+  outline: 0
+}
+.PresetDateRangePicker_button__selected {
+  color: #fff;
+  background: #00a699
+}
+.SingleDatePickerInput {
+  display: inline-block;
+  background-color: #fff
+}
+.SingleDatePickerInput__withBorder {
+  border-radius: 2px;
+  border: 1px solid #dbdbdb
+}
+.SingleDatePickerInput__rtl {
+  direction: rtl
+}
+.SingleDatePickerInput__disabled {
+  background-color: #f2f2f2
+}
+.SingleDatePickerInput__block {
+  display: block
+}
+.SingleDatePickerInput__showClearDate {
+  padding-right: 30px
+}
+.SingleDatePickerInput_clearDate {
+  background: 0 0;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 10px 0 5px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%)
+}
+.SingleDatePickerInput_clearDate__default:focus,
+.SingleDatePickerInput_clearDate__default:hover {
+  background: #dbdbdb;
+  border-radius: 50%
+}
+.SingleDatePickerInput_clearDate__small {
+  padding: 6px
+}
+.SingleDatePickerInput_clearDate__hide {
+  visibility: hidden
+}
+.SingleDatePickerInput_clearDate_svg {
+  fill: #82888a;
+  height: 12px;
+  width: 15px;
+  vertical-align: middle
+}
+.SingleDatePickerInput_clearDate_svg__small {
+  height: 9px
+}
+.SingleDatePickerInput_calendarIcon {
+  background: 0 0;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px;
+  margin: 0 5px 0 10px
+}
+.SingleDatePickerInput_calendarIcon_svg {
+  fill: #82888a;
+  height: 15px;
+  width: 14px;
+  vertical-align: middle
+}
+.SingleDatePicker {
+  position: relative;
+  display: inline-block
+}
+.SingleDatePicker__block {
+  display: block
+}
+.SingleDatePicker_picker {
+  z-index: 1;
+  background-color: #fff;
+  position: absolute
+}
+.SingleDatePicker_picker__rtl {
+  direction: rtl
+}
+.SingleDatePicker_picker__directionLeft {
+  left: 0
+}
+.SingleDatePicker_picker__directionRight {
+  right: 0
+}
+.SingleDatePicker_picker__portal {
+  background-color: rgba(0,0,0,.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%
+}
+.SingleDatePicker_picker__fullScreenPortal {
+  background-color: #fff
+}
+.SingleDatePicker_closeButton {
+  background: 0 0;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  z-index: 2
+}
+.SingleDatePicker_closeButton:focus,
+.SingleDatePicker_closeButton:hover {
+  color: darken(#cacccd,10%);
+  text-decoration: none
+}
+.SingleDatePicker_closeButton_svg {
+  height: 15px;
+  width: 15px;
+  fill: #cacccd
+}
+.DayPickerKeyboardShortcuts_buttonReset {
+  background: 0 0;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  cursor: pointer;
+  font-size: 14px
+}
+.DayPickerKeyboardShortcuts_buttonReset:active {
+  outline: 0
+}
+.DayPickerKeyboardShortcuts_show {
+  width: 33px;
+  height: 26px;
+  position: absolute;
+  z-index: 2
+}
+.DayPickerKeyboardShortcuts_show::before {
+  content: "";
+  display: block;
+  position: absolute
+}
+.DayPickerKeyboardShortcuts_show__bottomRight {
+  bottom: 0;
+  right: 0
+}
+.DayPickerKeyboardShortcuts_show__bottomRight::before {
+  border-top: 26px solid transparent;
+  border-right: 33px solid #00a699;
+  bottom: 0;
+  right: 0
+}
+.DayPickerKeyboardShortcuts_show__bottomRight:hover::before {
+  border-right: 33px solid #008489
+}
+.DayPickerKeyboardShortcuts_show__topRight {
+  top: 0;
+  right: 0
+}
+.DayPickerKeyboardShortcuts_show__topRight::before {
+  border-bottom: 26px solid transparent;
+  border-right: 33px solid #00a699;
+  top: 0;
+  right: 0
+}
+.DayPickerKeyboardShortcuts_show__topRight:hover::before {
+  border-right: 33px solid #008489
+}
+.DayPickerKeyboardShortcuts_show__topLeft {
+  top: 0;
+  left: 0
+}
+.DayPickerKeyboardShortcuts_show__topLeft::before {
+  border-bottom: 26px solid transparent;
+  border-left: 33px solid #00a699;
+  top: 0;
+  left: 0
+}
+.DayPickerKeyboardShortcuts_show__topLeft:hover::before {
+  border-left: 33px solid #008489
+}
+.DayPickerKeyboardShortcuts_showSpan {
+  color: #fff;
+  position: absolute
+}
+.DayPickerKeyboardShortcuts_showSpan__bottomRight {
+  bottom: 0;
+  right: 5px
+}
+.DayPickerKeyboardShortcuts_showSpan__topRight {
+  top: 1px;
+  right: 5px
+}
+.DayPickerKeyboardShortcuts_showSpan__topLeft {
+  top: 1px;
+  left: 5px
+}
+.DayPickerKeyboardShortcuts_panel {
+  overflow: auto;
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  padding: 22px;
+  margin: 33px;
+  text-align: left
+}
+.DayPickerKeyboardShortcuts_title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0
+}
+.DayPickerKeyboardShortcuts_list {
+  list-style: none;
+  padding: 0;
+  font-size: 14px
+}
+.DayPickerKeyboardShortcuts_close {
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  z-index: 2
+}
+.DayPickerKeyboardShortcuts_close:active {
+  outline: 0
+}
+.DayPickerKeyboardShortcuts_closeSvg {
+  height: 15px;
+  width: 15px;
+  fill: #cacccd
+}
+.DayPickerKeyboardShortcuts_closeSvg:focus,
+.DayPickerKeyboardShortcuts_closeSvg:hover {
+  fill: #82888a
+}
+.CalendarDay {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center
+}
+.CalendarDay:active {
+  outline: 0
+}
+.CalendarDay__defaultCursor {
+  cursor: default
+}
+.CalendarDay__default {
+  border: 1px solid #e4e7e7;
+  color: #484848;
+  background: #fff
+}
+.CalendarDay__default:hover {
+  background: #e4e7e7;
+  border: 1px solid #e4e7e7;
+  color: inherit
+}
+.CalendarDay__hovered_offset {
+  background: #f4f5f5;
+  border: 1px double #e4e7e7;
+  color: inherit
+}
+.CalendarDay__outside {
+  border: 0;
+  background: #fff;
+  color: #484848
+}
+.CalendarDay__outside:hover {
+  border: 0
+}
+.CalendarDay__blocked_minimum_nights {
+  background: #fff;
+  border: 1px solid #eceeee;
+  color: #cacccd
+}
+.CalendarDay__blocked_minimum_nights:active,
+.CalendarDay__blocked_minimum_nights:hover {
+  background: #fff;
+  color: #cacccd
+}
+.CalendarDay__highlighted_calendar {
+  background: #ffe8bc;
+  color: #484848
+}
+.CalendarDay__highlighted_calendar:active,
+.CalendarDay__highlighted_calendar:hover {
+  background: #ffce71;
+  color: #484848
+}
+.CalendarDay__selected_span {
+  background: #66e2da;
+  border: 1px double #33dacd;
+  color: #fff
+}
+.CalendarDay__selected_span:active,
+.CalendarDay__selected_span:hover {
+  background: #33dacd;
+  border: 1px double #33dacd;
+  color: #fff
+}
+.CalendarDay__selected,
+.CalendarDay__selected:active,
+.CalendarDay__selected:hover {
+  background: #00a699;
+  border: 1px double #00a699;
+  color: #fff
+}
+.CalendarDay__hovered_span,
+.CalendarDay__hovered_span:hover {
+  background: #b2f1ec;
+  border: 1px double #80e8e0;
+  color: #007a87
+}
+.CalendarDay__hovered_span:active {
+  background: #80e8e0;
+  border: 1px double #80e8e0;
+  color: #007a87
+}
+.CalendarDay__blocked_calendar,
+.CalendarDay__blocked_calendar:active,
+.CalendarDay__blocked_calendar:hover {
+  background: #cacccd;
+  border: 1px solid #cacccd;
+  color: #82888a
+}
+.CalendarDay__blocked_out_of_range,
+.CalendarDay__blocked_out_of_range:active,
+.CalendarDay__blocked_out_of_range:hover {
+  background: #fff;
+  border: 1px solid #e4e7e7;
+  color: #cacccd
+}
+.CalendarDay__hovered_start_first_possible_end {
+  background: #eceeee;
+  border: 1px double #eceeee
+}
+.CalendarDay__hovered_start_blocked_min_nights {
+  background: #eceeee;
+  border: 1px double #e4e7e7
+}
+.CalendarMonth {
+  background: #fff;
+  text-align: center;
+  vertical-align: top;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+.CalendarMonth_table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+.CalendarMonth_verticalSpacing {
+  border-collapse: separate
+}
+.CalendarMonth_caption {
+  color: #484848;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 22px;
+  padding-bottom: 37px;
+  caption-side: initial
+}
+.CalendarMonth_caption__verticalScrollable {
+  padding-top: 12px;
+  padding-bottom: 7px
+}
+.CalendarMonthGrid {
+  background: #fff;
+  text-align: left;
+  z-index: 0
+}
+.CalendarMonthGrid__animating {
+  z-index: 1
+}
+.CalendarMonthGrid__horizontal {
+  position: absolute;
+  left: 9px
+}
+.CalendarMonthGrid__vertical {
+  margin: 0 auto
+}
+.CalendarMonthGrid__vertical_scrollable {
+  margin: 0 auto;
+  overflow-y: scroll
+}
+.CalendarMonthGrid_month__horizontal {
+  display: inline-block;
+  vertical-align: top;
+  min-height: 100%
+}
+.CalendarMonthGrid_month__hideForAnimation {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none
+}
+.CalendarMonthGrid_month__hidden {
+  visibility: hidden
+}
+.DayPickerNavigation {
+  position: relative;
+  z-index: 2
+}
+.DayPickerNavigation__horizontal {
+  height: 0
+}
+.DayPickerNavigation__verticalDefault {
+  position: absolute;
+  width: 100%;
+  height: 52px;
+  bottom: 0;
+  left: 0
+}
+.DayPickerNavigation__verticalScrollableDefault {
+  position: relative
+}
+.DayPickerNavigation_button {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 0;
+  padding: 0;
+  margin: 0
+}
+.DayPickerNavigation_button__default {
+  border: 1px solid #e4e7e7;
+  background-color: #fff;
+  color: #757575
+}
+.DayPickerNavigation_button__default:focus,
+.DayPickerNavigation_button__default:hover {
+  border: 1px solid #c4c4c4
+}
+.DayPickerNavigation_button__default:active {
+  background: #f2f2f2
+}
+.DayPickerNavigation_button__disabled {
+  cursor: default;
+  border: 1px solid #f2f2f2
+}
+.DayPickerNavigation_button__disabled:focus,
+.DayPickerNavigation_button__disabled:hover {
+  border: 1px solid #f2f2f2
+}
+.DayPickerNavigation_button__disabled:active {
+  background: 0 0
+}
+.DayPickerNavigation_button__horizontalDefault {
+  position: absolute;
+  top: 18px;
+  line-height: .78;
+  border-radius: 3px;
+  padding: 6px 9px
+}
+.DayPickerNavigation_leftButton__horizontalDefault {
+  left: 22px
+}
+.DayPickerNavigation_rightButton__horizontalDefault {
+  right: 22px
+}
+.DayPickerNavigation_button__verticalDefault {
+  padding: 5px;
+  background: #fff;
+  box-shadow: 0 0 5px 2px rgba(0,0,0,.1);
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  height: 100%;
+  width: 50%
+}
+.DayPickerNavigation_nextButton__verticalDefault {
+  border-left: 0
+}
+.DayPickerNavigation_nextButton__verticalScrollableDefault {
+  width: 100%
+}
+.DayPickerNavigation_svg__horizontal {
+  height: 19px;
+  width: 19px;
+  fill: #82888a;
+  display: block
+}
+.DayPickerNavigation_svg__vertical {
+  height: 42px;
+  width: 42px;
+  fill: #484848
+}
+.DayPickerNavigation_svg__disabled {
+  fill: #f2f2f2
+}
+.DayPicker {
+  background: #fff;
+  position: relative;
+  text-align: left
+}
+.DayPicker__horizontal {
+  background: #fff
+}
+.DayPicker__verticalScrollable {
+  height: 100%
+}
+.DayPicker__hidden {
+  visibility: hidden
+}
+.DayPicker__withBorder {
+  box-shadow: 0 2px 6px rgba(0,0,0,.05),0 0 0 1px rgba(0,0,0,.07);
+  border-radius: 3px
+}
+.DayPicker_portal__horizontal {
+  box-shadow: none;
+  position: absolute;
+  left: 50%;
+  top: 50%
+}
+.DayPicker_portal__vertical {
+  position: initial
+}
+.DayPicker_focusRegion {
+  outline: 0
+}
+.DayPicker_calendarInfo__horizontal,
+.DayPicker_wrapper__horizontal {
+  display: inline-block;
+  vertical-align: top
+}
+.DayPicker_weekHeaders {
+  position: relative
+}
+.DayPicker_weekHeaders__horizontal {
+  margin-left: 9px
+}
+.DayPicker_weekHeader {
+  color: #757575;
+  position: absolute;
+  top: 62px;
+  z-index: 2;
+  text-align: left
+}
+.DayPicker_weekHeader__vertical {
+  left: 50%
+}
+.DayPicker_weekHeader__verticalScrollable {
+  top: 0;
+  display: table-row;
+  border-bottom: 1px solid #dbdbdb;
+  background: #fff;
+  margin-left: 0;
+  left: 0;
+  width: 100%;
+  text-align: center
+}
+.DayPicker_weekHeader_ul {
+  list-style: none;
+  margin: 1px 0;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 14px
+}
+.DayPicker_weekHeader_li {
+  display: inline-block;
+  text-align: center
+}
+.DayPicker_transitionContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px
+}
+.DayPicker_transitionContainer__horizontal {
+  -webkit-transition: height .2s ease-in-out;
+  -moz-transition: height .2s ease-in-out;
+  transition: height .2s ease-in-out
+}
+.DayPicker_transitionContainer__vertical {
+  width: 100%
+}
+.DayPicker_transitionContainer__verticalScrollable {
+  padding-top: 20px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow-y: scroll
+}
+.DateInput {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  position: relative;
+  display: inline-block;
+  width: 130px;
+  vertical-align: middle
+}
+.DateInput__small {
+  width: 97px
+}
+.DateInput__block {
+  width: 100%
+}
+.DateInput__disabled {
+  background: #f2f2f2;
+  color: #dbdbdb
+}
+.DateInput_input {
+  font-weight: 200;
+  font-size: 19px;
+  line-height: 24px;
+  color: #484848;
+  background-color: #fff;
+  width: 100%;
+  padding: 11px 11px 9px;
+  border: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 2px solid transparent;
+  border-left: 0;
+  border-radius: 0
+}
+.DateInput_input__small {
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: .2px;
+  padding: 7px 7px 5px
+}
+.DateInput_input__regular {
+  font-weight: auto
+}
+.DateInput_input__readOnly {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+.DateInput_input__focused {
+  outline: 0;
+  background: #fff;
+  border: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 2px solid #008489;
+  border-left: 0
+}
+.DateInput_input__disabled {
+  background: #f2f2f2;
+  font-style: italic
+}
+.DateInput_screenReaderMessage {
+  border: 0;
+  clip: rect(0,0,0,0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px
+}
+.DateInput_fang {
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  left: 22px;
+  z-index: 2
+}
+.DateInput_fangShape {
+  fill: #fff
+}
+.DateInput_fangStroke {
+  stroke: #dbdbdb;
+  fill: transparent
+}
+.DateRangePickerInput {
+  background-color: #fff;
+  display: inline-block
+}
+.DateRangePickerInput__disabled {
+  background: #f2f2f2
+}
+.DateRangePickerInput__withBorder {
+  border-radius: 2px;
+  border: 1px solid #dbdbdb
+}
+.DateRangePickerInput__rtl {
+  direction: rtl
+}
+.DateRangePickerInput__block {
+  display: block
+}
+.DateRangePickerInput__showClearDates {
+  padding-right: 30px
+}
+.DateRangePickerInput_arrow {
+  display: inline-block;
+  vertical-align: middle;
+  color: #484848
+}
+.DateRangePickerInput_arrow_svg {
+  vertical-align: middle;
+  fill: #484848;
+  height: 24px;
+  width: 24px
+}
+.DateRangePickerInput_clearDates {
+  background: 0 0;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 10px 0 5px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%)
+}
+.DateRangePickerInput_clearDates__small {
+  padding: 6px
+}
+.DateRangePickerInput_clearDates_default:focus,
+.DateRangePickerInput_clearDates_default:hover {
+  background: #dbdbdb;
+  border-radius: 50%
+}
+.DateRangePickerInput_clearDates__hide {
+  visibility: hidden
+}
+.DateRangePickerInput_clearDates_svg {
+  fill: #82888a;
+  height: 12px;
+  width: 15px;
+  vertical-align: middle
+}
+.DateRangePickerInput_clearDates_svg__small {
+  height: 9px
+}
+.DateRangePickerInput_calendarIcon {
+  background: 0 0;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px;
+  margin: 0 5px 0 10px
+}
+.DateRangePickerInput_calendarIcon_svg {
+  fill: #82888a;
+  height: 15px;
+  width: 14px;
+  vertical-align: middle
+}
+.DateRangePicker {
+  position: relative;
+  display: inline-block
+}
+.DateRangePicker__block {
+  display: block
+}
+.DateRangePicker_picker {
+  z-index: 1;
+  background-color: #fff;
+  position: absolute
+}
+.DateRangePicker_picker__rtl {
+  direction: rtl
+}
+.DateRangePicker_picker__directionLeft {
+  left: 0
+}
+.DateRangePicker_picker__directionRight {
+  right: 0
+}
+.DateRangePicker_picker__portal {
+  background-color: rgba(0,0,0,.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%
+}
+.DateRangePicker_picker__fullScreenPortal {
+  background-color: #fff
+}
+.DateRangePicker_closeButton {
+  background: 0 0;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px;
+  z-index: 2
+}
+.DateRangePicker_closeButton:focus,
+.DateRangePicker_closeButton:hover {
+  color: darken(#cacccd,10%);
+  text-decoration: none
+}
+.DateRangePicker_closeButton_svg {
+  height: 15px;
+  width: 15px;
+  fill: #cacccd
+}</style><style type="text/css">.DateInput_input {
+    box-sizing: border-box;
+}
+
+.DayPickerNavigation__verticalDefault {
+    text-align: center;
+    height: initial;
+    padding: 10px 0px;
+}
+
+.DayPickerNavigation_svg__vertical {
+    height: 20px;
+}
+</style><style type="text/css">.VirtualSelectGrid {
+  z-index: 1;
+}
+
+.VirtualizedSelectOption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 .5rem;
+}
+.VirtualizedSelectFocusedOption {
+  background-color: rgba(0, 126, 255, 0.1);
+}
+.VirtualizedSelectDisabledOption {
+  opacity: 0.5;
+}
+.VirtualizedSelectSelectedOption {
+  font-weight: bold;
+}
+</style><style type="text/css">/* Collection default theme */
+
+.ReactVirtualized__Collection {
+}
+
+.ReactVirtualized__Collection__innerScrollContainer {
+}
+
+/* Grid default theme */
+
+.ReactVirtualized__Grid {
+}
+
+.ReactVirtualized__Grid__innerScrollContainer {
+}
+
+/* Table default theme */
+
+.ReactVirtualized__Table {
+}
+
+.ReactVirtualized__Table__Grid {
+}
+
+.ReactVirtualized__Table__headerRow {
+  font-weight: 700;
+  text-transform: uppercase;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.ReactVirtualized__Table__row {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ReactVirtualized__Table__headerTruncatedText {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.ReactVirtualized__Table__headerColumn,
+.ReactVirtualized__Table__rowColumn {
+  margin-right: 10px;
+  min-width: 0px;
+}
+.ReactVirtualized__Table__rowColumn {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ReactVirtualized__Table__headerColumn:first-of-type,
+.ReactVirtualized__Table__rowColumn:first-of-type {
+  margin-left: 10px;
+}
+.ReactVirtualized__Table__sortableHeaderColumn {
+  cursor: pointer;
+}
+
+.ReactVirtualized__Table__sortableHeaderIconContainer {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.ReactVirtualized__Table__sortableHeaderIcon {
+  -webkit-flex: 0 0 24px;
+     -moz-box-flex: 0;
+      -ms-flex: 0 0 24px;
+          flex: 0 0 24px;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+}
+
+/* List default theme */
+
+.ReactVirtualized__List {
+}
+</style><style type="text/css">.dash-dropdown .Select-menu-outer {
+    z-index: 1000;
+}</style>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="robots" content="nofollow">
+<meta name="googlebot" content="noindex">
+<title>Dash</title>
+<link rel="icon" type="image/x-icon" href="https://dash.gallery/python-docs-dash-snippets/_favicon.ico?v=1.19.0">
+<link rel="stylesheet" href="./chris_codepen.css">
+<link rel="stylesheet" href="./fonts.css">
+<link rel="stylesheet" href="./highlight.css">
+<style type="text/css">.forna-container .structure-background-rect {
+    stroke: black;
+    stroke-width: 5;
+    fill: transparent;
+}
+
+.forna-container circle.rna-base {
+  stroke: #ccc;
+  stroke-width: 1px;
+  opacity: 1;
+  fill: white;
+}
+
+.forna-container circle.rna-base.label {
+    stroke: transparent;
+    stroke-width: 0;
+    fill: white;
+}
+
+.forna-container line.link {
+  stroke: #999;
+  stroke-opacity: 0.8;
+  stroke-width: 2;
+}
+
+.forna-container line.rna-link {
+  stroke: #999;
+  stroke-opacity: 0.8;
+  stroke-width: 2;
+}
+
+.forna-container .overlay {
+    fill: transparent;
+}
+
+.forna-container .rna-name {
+    text-anchor: middle;
+    dy: -10;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 8pt;
+}
+
+.forna-container line.rna-link[link-type="backbone"] {
+    stroke: transparent;
+}
+
+.forna-container line.rna-link[link-type="basepair"] {
+    stroke: transparent;
+}
+
+.forna-container line.rna-link[link-type="fake"] {
+    stroke: transparent;
+}
+
+.forna-container line.rna-link[link-type="extra"] {
+    stroke: grey;
+}
+
+.forna-container line.rna-link[extra-link-type="correct"] {
+    stroke: green;
+}
+
+.forna-container line.rna-link[extra-link-type="incorrect"] {
+    stroke: green;
+}
+
+
+.forna-container path {
+    stroke-width: 2;
+}
+
+.forna-container path[extra-link-type="correct"] {
+    stroke: green;
+}
+
+.forna-container path[extra-link-type="incorrect"] {
+    stroke: red;
+}
+
+
+.forna-container line.basepair {
+  stroke: red;
+}
+
+.forna-container line.intermolecule {
+  stroke: blue;
+}
+
+.forna-container line.chain_chain {
+  stroke-dasharray: 3,3;
+}
+
+.forna-container line.fake {
+  stroke: green;
+}
+
+.forna-container .transparent {
+    fill: transparent;
+    stroke-width: 0;
+    stroke-opacity: 0;
+    opacity: 0;
+}
+
+.forna-container .d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+.forna-container text.nucleotide-label {
+    font-size: 5.5pt;
+    font-weight: bold;
+    font-family: Tahoma, Geneva, sans-serif;
+    color: rgb(100,100,100);
+    pointer-events: none;
+}
+
+.forna-container text.number-label {
+    font-size: 5.5pt;
+    font-weight: bold;
+    font-family: Tahoma, Geneva, sans-serif;
+    color: rgb(100,100,100);
+    pointer-events: none;
+}
+
+.forna-container text {
+    pointer-events: none;
+}
+
+.forna-container g.gnode {
+
+}
+
+.forna-container .brush .extent {
+  fill-opacity: .1;
+  stroke: #fff;
+  shape-rendering: crispEdges;
+}
+
+.forna-container .noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+</style><style type="text/css">.forna-container svg {
+  display: block;
+  min-width: 100%;
+  width: 100%;
+  min-height: 100%;
+}
+
+.forna-container circle.node {
+  stroke: #ccc;
+  stroke-width: 1px;
+  opacity: 1;
+  fill: white;
+}
+
+.forna-container polygon.node {
+  stroke: #ccc;
+  stroke-width: 1px;
+  opacity: 1;
+  fill: white;
+}
+
+.forna-container circle.node.label {
+    stroke: transparent;
+    stroke-width: 0;
+    fill: white;
+    display: inline;
+}
+
+.forna-container circle.outline_node {
+    stroke-width: 1px;
+    fill: red;
+}
+
+.forna-container circle.protein {
+    fill: gray;
+    fill-opacity: 0.5;
+    stroke-width: 4;
+}
+
+.forna-container circle.hidden_outline {
+    stroke-width: 0px;
+}
+
+
+.forna-container line.link {
+  stroke: #999;
+  stroke-opacity: 0.8;
+  stroke-width: 2;
+}
+
+.forna-container line.pseudoknot {
+    stroke: red;
+}
+
+.forna-container line.basepair {
+  stroke: red;
+}
+
+.forna-container line.intermolecule {
+  stroke: blue;
+}
+
+.forna-container line.chain_chain {
+  stroke-dasharray: 3,3;
+}
+
+.forna-container line.fake {
+  stroke: green;
+}
+
+.forna-container .transparent {
+    fill: transparent;
+    stroke-width: 0;
+    stroke-opacity: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.forna-container .drag_line {
+  stroke: #999;
+  stroke-width: 2;
+  pointer-events: none;
+}
+
+.forna-container .drag_line_hidden {
+  stroke: #999;
+  stroke-width: 0;
+  pointer-events: none;
+}
+
+.forna-container .d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border-radius: 4px;
+    pointer-events: none;
+          }
+
+.forna-container text.node-label {
+    font-weight: bold;
+    font-family: Tahoma, Geneva, sans-serif;
+    color: rgb(100,100,100);
+    pointer-events: none;
+}
+
+.forna-container text {
+    pointer-events: none;
+}
+
+.forna-container g.gnode {
+
+}
+
+.forna-container circle.outline_node.selected {
+    visibility: visible;
+}
+
+.forna-container circle.outline_node {
+    visibility: hidden;
+}
+
+.forna-container .brush .extent {
+  fill-opacity: .1;
+  stroke: #fff;
+  shape-rendering: crispEdges;
+}
+
+.forna-container .noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+</style><style data-styled="" data-styled-version="4.4.0"></style><script charset="utf-8" src="./async-markdown.v1_15_0m1611086576.js.download"></script><script charset="utf-8" src="./async-dropdown.v1_15_0m1611086576.js.download"></script><script charset="utf-8" src="./async-plotlyjs.v1_15_0m1611086576.js.download"></script><script charset="utf-8" src="./async-graph.v1_15_0m1611086576.js.download"></script><style id="plotly.js-style-global"></style><style id="plotly.js-style-modebar-047288"></style></head>
+<body data-new-gr-c-s-check-loaded="14.1045.0" data-gr-ext-installed="">
+<div id="react-entry-point"><div><div id="display"><div><div style="float: left; width: 49%; height: 615px; overflow-y: auto; position: relative; background-color: rgb(247, 250, 252); border-top: 1px solid rgb(161, 172, 195); border-right: none; border-bottom: 1px solid rgb(161, 172, 195); border-left: 1px solid rgb(161, 172, 195); border-image: initial;"><div><div><pre><code class="hljs python"><span class="hljs-keyword">import</span> dash
+<span class="hljs-keyword">import</span> dash_core_components <span class="hljs-keyword">as</span> dcc
+<span class="hljs-keyword">import</span> dash_html_components <span class="hljs-keyword">as</span> html
+<span class="hljs-keyword">from</span> dash.dependencies <span class="hljs-keyword">import</span> Input, Output
+<span class="hljs-keyword">import</span> plotly.express <span class="hljs-keyword">as</span> px
+
+df = px.data.iris()
+all_dims = [<span class="hljs-string">'sepal_length'</span>, <span class="hljs-string">'sepal_width'</span>, 
+            <span class="hljs-string">'petal_length'</span>, <span class="hljs-string">'petal_width'</span>]
+
+app = dash.Dash(__name__)
+
+app.layout = html.Div([
+    dcc.Dropdown(
+        <span class="hljs-built_in">id</span>=<span class="hljs-string">"dropdown"</span>,
+        options=[{<span class="hljs-string">"label"</span>: x, <span class="hljs-string">"value"</span>: x} 
+                 <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> all_dims],
+        value=all_dims[:<span class="hljs-number">2</span>],
+        multi=<span class="hljs-literal">True</span>
+    ),
+    dcc.Graph(<span class="hljs-built_in">id</span>=<span class="hljs-string">"splom"</span>),
+])
+
+<span class="hljs-meta">@app.callback(</span>
+    Output(<span class="hljs-string">"splom"</span>, <span class="hljs-string">"figure"</span>), 
+    [Input(<span class="hljs-string">"dropdown"</span>, <span class="hljs-string">"value"</span>)])
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">update_bar_chart</span>(<span class="hljs-params">dims</span>):</span>
+    fig = px.scatter_matrix(
+        df, dimensions=dims, color=<span class="hljs-string">"species"</span>)
+    <span class="hljs-keyword">return</span> fig
+
+app.run_server(debug=<span class="hljs-literal">True</span>)</code></pre></div><a download="app.py" href="https://dash.gallery/python-docs-dash-snippets/assets/plotly-express.py" style="position: absolute; top: 1.5em; right: 1.5em;"><button style="width: 90px; margin: auto; padding: 0px; font-size: 10px; height: 35px; border-radius: 2px;">Download</button></a></div></div><div style="float: left; width: 48%; padding: 5px 1%; height: 605px; overflow-y: auto; border: 1px solid rgb(161, 172, 195);"><div><div id="plotly-express-dropdown" class="dash-dropdown"><div class="Select has-value is-clearable is-searchable Select--multi"><div class="Select-control"><div class="Select-multi-value-wrapper" id="react-select-2--value"><div class="Select-value"><span class="Select-value-icon" aria-hidden="true">×</span><span class="Select-value-label" role="option" aria-selected="true" id="react-select-2--value-0">sepal_length<span class="Select-aria-only">&nbsp;</span></span></div><div class="Select-value"><span class="Select-value-icon" aria-hidden="true">×</span><span class="Select-value-label" role="option" aria-selected="true" id="react-select-2--value-1">sepal_width<span class="Select-aria-only">&nbsp;</span></span></div><div class="Select-input" style="display: inline-block;"><input id="plotly-express-dropdown" aria-activedescendant="react-select-2--value" aria-expanded="false" aria-haspopup="false" aria-owns="" role="combobox" value="" style="box-sizing: content-box; width: 5px;"><div style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: 15px; font-family: &quot;open sans&quot;, helveticaneue, &quot;helvetica neue&quot;, Helvetica, Arial, sans-serif; font-weight: 400; font-style: normal; letter-spacing: normal; text-transform: none;"></div></div></div><span aria-label="Clear all" class="Select-clear-zone" title="Clear all"><span class="Select-clear">×</span></span><span class="Select-arrow-zone"><span class="Select-arrow"></span></span></div></div></div><div id="plotly-express-splom" class="dash-graph"><div></div><div class="js-plotly-plot" style="height: 100%; width: 100%;"><div class="plot-container plotly"><div class="user-select-none svg-container" style="position: relative; width: 325.906px; height: 450px;"><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="325.906" height="450" style="background: white;"><defs id="defs-047288"><g class="clips"><clippath id="clip047288xyplot" class="plotclip"><rect width="60.1578947368421" height="146.8421052631579"></rect></clippath><clippath class="axesclip" id="clip047288x"><rect x="80" y="0" width="60.1578947368421" height="450"></rect></clippath><clippath class="axesclip" id="clip047288y"><rect x="0" y="60" width="325.906" height="146.8421052631579"></rect></clippath><clippath class="axesclip" id="clip047288xy"><rect x="80" y="60" width="60.1578947368421" height="146.8421052631579"></rect></clippath><clippath id="clip047288xy2plot" class="plotclip"><rect width="60.1578947368421" height="146.8421052631579"></rect></clippath><clippath id="clip047288x2yplot" class="plotclip"><rect width="60.15789473684211" height="146.8421052631579"></rect></clippath><clippath id="clip047288x2y2plot" class="plotclip"><rect width="60.15789473684211" height="146.8421052631579"></rect></clippath><clippath class="axesclip" id="clip047288y2"><rect x="0" y="223.15789473684214" width="325.906" height="146.8421052631579"></rect></clippath><clippath class="axesclip" id="clip047288xy2"><rect x="80" y="223.15789473684214" width="60.1578947368421" height="146.8421052631579"></rect></clippath><clippath class="axesclip" id="clip047288x2"><rect x="146.8421052631579" y="0" width="60.15789473684211" height="450"></rect></clippath><clippath class="axesclip" id="clip047288x2y"><rect x="146.8421052631579" y="60" width="60.15789473684211" height="146.8421052631579"></rect></clippath><clippath class="axesclip" id="clip047288x2y2"><rect x="146.8421052631579" y="223.15789473684214" width="60.15789473684211" height="146.8421052631579"></rect></clippath></g><g class="gradients"></g></defs><g class="bglayer"><rect class="bg" x="80" y="60" width="60.1578947368421" height="146.8421052631579" style="fill: rgb(229, 236, 246); fill-opacity: 1; stroke-width: 0;"></rect><rect class="bg" x="80" y="223.15789473684214" width="60.1578947368421" height="146.8421052631579" style="fill: rgb(229, 236, 246); fill-opacity: 1; stroke-width: 0;"></rect><rect class="bg" x="146.8421052631579" y="60" width="60.15789473684211" height="146.8421052631579" style="fill: rgb(229, 236, 246); fill-opacity: 1; stroke-width: 0;"></rect><rect class="bg" x="146.8421052631579" y="223.15789473684214" width="60.15789473684211" height="146.8421052631579" style="fill: rgb(229, 236, 246); fill-opacity: 1; stroke-width: 0;"></rect></g><g class="draglayer cursor-crosshair"><g class="xy"><rect class="nsewdrag drag" data-subplot="xy" x="80" y="60" width="60.1578947368421" height="146.8421052631579" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nwdrag drag cursor-nw-resize" data-subplot="xy" x="60" y="40" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nedrag drag cursor-ne-resize" data-subplot="xy" x="140.1578947368421" y="40" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="swdrag drag cursor-sw-resize" data-subplot="xy" x="60" y="206.8421052631579" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="sedrag drag cursor-se-resize" data-subplot="xy" x="140.1578947368421" y="206.8421052631579" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="ewdrag drag cursor-ew-resize" data-subplot="xy" x="96.6" y="370.5" width="132.8" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="wdrag drag cursor-w-resize" data-subplot="xy" x="80" y="370.5" width="16.6" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="edrag drag cursor-e-resize" data-subplot="xy" x="229.4" y="370.5" width="16.6" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nsdrag drag cursor-ns-resize" data-subplot="xy" x="59.5" y="74.6842105263158" width="20" height="117.47368421052632" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="sdrag drag cursor-s-resize" data-subplot="xy" x="59.5" y="192.1578947368421" width="20" height="14.68421052631579" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="ndrag drag cursor-n-resize" data-subplot="xy" x="59.5" y="60" width="20" height="14.68421052631579" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect></g><g class="xy2"><rect class="nsewdrag drag" data-subplot="xy2" x="80" y="223.15789473684214" width="60.1578947368421" height="146.8421052631579" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nwdrag drag cursor-nw-resize" data-subplot="xy2" x="60" y="203.15789473684214" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nedrag drag cursor-ne-resize" data-subplot="xy2" x="140.1578947368421" y="203.15789473684214" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="swdrag drag cursor-sw-resize" data-subplot="xy2" x="60" y="370" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="sedrag drag cursor-se-resize" data-subplot="xy2" x="140.1578947368421" y="370" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="ewdrag drag cursor-ew-resize" data-subplot="xy2" x="86.01578947368421" y="370.5" width="48.126315789473686" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="wdrag drag cursor-w-resize" data-subplot="xy2" x="80" y="370.5" width="6.015789473684211" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="edrag drag cursor-e-resize" data-subplot="xy2" x="134.1421052631579" y="370.5" width="6.015789473684211" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nsdrag drag cursor-ns-resize" data-subplot="xy2" x="59.5" y="237.84210526315792" width="20" height="117.47368421052632" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="sdrag drag cursor-s-resize" data-subplot="xy2" x="59.5" y="355.3157894736843" width="20" height="14.68421052631579" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="ndrag drag cursor-n-resize" data-subplot="xy2" x="59.5" y="223.15789473684214" width="20" height="14.68421052631579" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect></g><g class="x2y"><rect class="nsewdrag drag" data-subplot="x2y" x="146.8421052631579" y="60" width="60.15789473684211" height="146.8421052631579" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nwdrag drag cursor-nw-resize" data-subplot="x2y" x="126.84210526315789" y="40" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nedrag drag cursor-ne-resize" data-subplot="x2y" x="207" y="40" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="swdrag drag cursor-sw-resize" data-subplot="x2y" x="126.84210526315789" y="206.8421052631579" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="sedrag drag cursor-se-resize" data-subplot="x2y" x="207" y="206.8421052631579" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect></g><g class="x2y2"><rect class="nsewdrag drag" data-subplot="x2y2" x="146.8421052631579" y="223.15789473684214" width="60.15789473684211" height="146.8421052631579" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nwdrag drag cursor-nw-resize" data-subplot="x2y2" x="126.84210526315789" y="203.15789473684214" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nedrag drag cursor-ne-resize" data-subplot="x2y2" x="207" y="203.15789473684214" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="swdrag drag cursor-sw-resize" data-subplot="x2y2" x="126.84210526315789" y="370" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="sedrag drag cursor-se-resize" data-subplot="x2y2" x="207" y="370" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="ewdrag drag cursor-ew-resize" data-subplot="x2y2" x="152.8578947368421" y="370.5" width="48.12631578947369" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="wdrag drag cursor-w-resize" data-subplot="x2y2" x="146.8421052631579" y="370.5" width="6.015789473684212" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="edrag drag cursor-e-resize" data-subplot="x2y2" x="200.9842105263158" y="370.5" width="6.015789473684212" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect></g></g><g class="layer-below"><g class="imagelayer"></g><g class="shapelayer"></g></g><g class="cartesianlayer"><g class="subplot xy"><g class="layer-subplot"><g class="shapelayer"></g><g class="imagelayer"></g></g><g class="gridlayer"><g class="x"><path class="xgrid crisp" transform="translate(82.87,0)" d="M0,60v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="xgrid crisp" transform="translate(95.83,0)" d="M0,60v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="xgrid crisp" transform="translate(108.78,0)" d="M0,60v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="xgrid crisp" transform="translate(121.74000000000001,0)" d="M0,60v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="xgrid crisp" transform="translate(134.7,0)" d="M0,60v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path></g><g class="y"><path class="ygrid crisp" transform="translate(0,199.83)" d="M80,0h60.1578947368421" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,168.20999999999998)" d="M80,0h60.1578947368421" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,136.57999999999998)" d="M80,0h60.1578947368421" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,104.96000000000001)" d="M80,0h60.1578947368421" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,73.33)" d="M80,0h60.1578947368421" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path></g></g><g class="zerolinelayer"></g><path class="xlines-below"></path><path class="ylines-below"></path><g class="overlines-below"></g><g class="xaxislayer-below"></g><g class="yaxislayer-below"></g><g class="overaxes-below"></g><g class="plot" transform="translate(80,60)" clip-path="url(&#39;#clip047288xyplot&#39;)"></g><g class="overplot"></g><path class="xlines-above crisp" d="M0,0" style="fill: none;"></path><path class="ylines-above crisp" d="M0,0" style="fill: none;"></path><g class="overlines-above"></g><g class="xaxislayer-above"></g><g class="yaxislayer-above"><g class="ytick"><text text-anchor="end" x="79" y="4.199999999999999" data-unformatted="4" data-math="N" transform="translate(0,199.83)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">4</text></g><g class="ytick"><text text-anchor="end" x="79" y="4.199999999999999" data-unformatted="5" data-math="N" transform="translate(0,168.20999999999998)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">5</text></g><g class="ytick"><text text-anchor="end" x="79" y="4.199999999999999" data-unformatted="6" data-math="N" transform="translate(0,136.57999999999998)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">6</text></g><g class="ytick"><text text-anchor="end" x="79" y="4.199999999999999" data-unformatted="7" data-math="N" transform="translate(0,104.96000000000001)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">7</text></g><g class="ytick"><text text-anchor="end" x="79" y="4.199999999999999" data-unformatted="8" data-math="N" transform="translate(0,73.33)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">8</text></g></g><g class="overaxes-above"></g></g><g class="subplot xy2"><g class="layer-subplot"><g class="shapelayer"></g><g class="imagelayer"></g></g><g class="gridlayer"><g class="x"><path class="xgrid crisp" transform="translate(82.87,0)" d="M0,223.15789473684214v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="xgrid crisp" transform="translate(95.83,0)" d="M0,223.15789473684214v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="xgrid crisp" transform="translate(108.78,0)" d="M0,223.15789473684214v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="xgrid crisp" transform="translate(121.74000000000001,0)" d="M0,223.15789473684214v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="xgrid crisp" transform="translate(134.7,0)" d="M0,223.15789473684214v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path></g><g class="y2"><path class="y2grid crisp" transform="translate(0,353.5078947368421)" d="M80,0h60.1578947368421" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="y2grid crisp" transform="translate(0,306.06789473684216)" d="M80,0h60.1578947368421" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="y2grid crisp" transform="translate(0,258.6278947368421)" d="M80,0h60.1578947368421" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path></g></g><g class="zerolinelayer"></g><path class="xlines-below"></path><path class="ylines-below"></path><g class="overlines-below"></g><g class="xaxislayer-below"></g><g class="yaxislayer-below"></g><g class="overaxes-below"></g><g class="plot" transform="translate(80,223.15789473684214)" clip-path="url(&#39;#clip047288xy2plot&#39;)"></g><g class="overplot"></g><path class="xlines-above crisp" d="M0,0" style="fill: none;"></path><path class="ylines-above crisp" d="M0,0" style="fill: none;"></path><g class="overlines-above"></g><g class="xaxislayer-above"><g class="xtick"><text text-anchor="middle" x="0" y="383" data-unformatted="4" data-math="N" transform="translate(82.87,0)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">4</text></g><g class="xtick"><text text-anchor="middle" x="0" y="383" data-unformatted="5" data-math="N" transform="translate(95.83,0)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">5</text></g><g class="xtick"><text text-anchor="middle" x="0" y="383" data-unformatted="6" data-math="N" transform="translate(108.78,0)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">6</text></g><g class="xtick"><text text-anchor="middle" x="0" y="383" data-unformatted="7" data-math="N" transform="translate(121.74000000000001,0)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">7</text></g><g class="xtick"><text text-anchor="middle" x="0" y="383" data-unformatted="8" data-math="N" transform="translate(134.7,0)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">8</text></g></g><g class="yaxislayer-above"><g class="y2tick"><text text-anchor="end" x="79" y="4.199999999999999" data-unformatted="2" data-math="N" transform="translate(0,353.5078947368421)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">2</text></g><g class="y2tick"><text text-anchor="end" x="79" y="4.199999999999999" data-unformatted="3" data-math="N" transform="translate(0,306.06789473684216)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">3</text></g><g class="y2tick"><text text-anchor="end" x="79" y="4.199999999999999" data-unformatted="4" data-math="N" transform="translate(0,258.6278947368421)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">4</text></g></g><g class="overaxes-above"></g></g><g class="subplot x2y"><g class="layer-subplot"><g class="shapelayer"></g><g class="imagelayer"></g></g><g class="gridlayer"><g class="x2"><path class="x2grid crisp" transform="translate(153.60210526315788,0)" d="M0,60v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="x2grid crisp" transform="translate(173.0321052631579,0)" d="M0,60v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="x2grid crisp" transform="translate(192.47210526315789,0)" d="M0,60v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path></g><g class="y"><path class="ygrid crisp" transform="translate(0,199.83)" d="M146.8421052631579,0h60.15789473684211" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,168.20999999999998)" d="M146.8421052631579,0h60.15789473684211" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,136.57999999999998)" d="M146.8421052631579,0h60.15789473684211" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,104.96000000000001)" d="M146.8421052631579,0h60.15789473684211" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,73.33)" d="M146.8421052631579,0h60.15789473684211" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path></g></g><g class="zerolinelayer"></g><path class="xlines-below"></path><path class="ylines-below"></path><g class="overlines-below"></g><g class="xaxislayer-below"></g><g class="yaxislayer-below"></g><g class="overaxes-below"></g><g class="plot" transform="translate(146.8421052631579,60)" clip-path="url(&#39;#clip047288x2yplot&#39;)"></g><g class="overplot"></g><path class="xlines-above crisp" d="M0,0" style="fill: none;"></path><path class="ylines-above crisp" d="M0,0" style="fill: none;"></path><g class="overlines-above"></g><g class="xaxislayer-above"></g><g class="yaxislayer-above"></g><g class="overaxes-above"></g></g><g class="subplot x2y2"><g class="layer-subplot"><g class="shapelayer"></g><g class="imagelayer"></g></g><g class="gridlayer"><g class="x2"><path class="x2grid crisp" transform="translate(153.60210526315788,0)" d="M0,223.15789473684214v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="x2grid crisp" transform="translate(173.0321052631579,0)" d="M0,223.15789473684214v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="x2grid crisp" transform="translate(192.47210526315789,0)" d="M0,223.15789473684214v146.8421052631579" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path></g><g class="y2"><path class="y2grid crisp" transform="translate(0,353.5078947368421)" d="M146.8421052631579,0h60.15789473684211" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="y2grid crisp" transform="translate(0,306.06789473684216)" d="M146.8421052631579,0h60.15789473684211" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path><path class="y2grid crisp" transform="translate(0,258.6278947368421)" d="M146.8421052631579,0h60.15789473684211" style="stroke: rgb(255, 255, 255); stroke-opacity: 1; stroke-width: 1px;"></path></g></g><g class="zerolinelayer"></g><path class="xlines-below"></path><path class="ylines-below"></path><g class="overlines-below"></g><g class="xaxislayer-below"></g><g class="yaxislayer-below"></g><g class="overaxes-below"></g><g class="plot" transform="translate(146.8421052631579,223.15789473684214)" clip-path="url(&#39;#clip047288x2y2plot&#39;)"></g><g class="overplot"></g><path class="xlines-above crisp" d="M0,0" style="fill: none;"></path><path class="ylines-above crisp" d="M0,0" style="fill: none;"></path><g class="overlines-above"></g><g class="xaxislayer-above"><g class="x2tick"><text text-anchor="middle" x="0" y="383" data-unformatted="2" data-math="N" transform="translate(153.60210526315788,0)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">2</text></g><g class="x2tick"><text text-anchor="middle" x="0" y="383" data-unformatted="3" data-math="N" transform="translate(173.0321052631579,0)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">3</text></g><g class="x2tick"><text text-anchor="middle" x="0" y="383" data-unformatted="4" data-math="N" transform="translate(192.47210526315789,0)" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">4</text></g></g><g class="yaxislayer-above"></g><g class="overaxes-above"></g></g></g><g class="polarlayer"></g><g class="ternarylayer"></g><g class="geolayer"></g><g class="funnelarealayer"></g><g class="pielayer"></g><g class="treemaplayer"></g><g class="sunburstlayer"></g><g class="glimages"></g></svg><div class="gl-container"><canvas class="gl-canvas gl-canvas-context" width="325.906" height="450" style="position: absolute; top: 0px; left: 0px; overflow: visible; pointer-events: none;"></canvas><canvas class="gl-canvas gl-canvas-focus" width="325.906" height="450" style="position: absolute; top: 0px; left: 0px; overflow: visible; pointer-events: none;"></canvas><canvas class="gl-canvas gl-canvas-pick" width="325.906" height="450" style="position: absolute; top: 0px; left: 0px; overflow: visible; pointer-events: none;"></canvas></div><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="325.906" height="450"><defs id="topdefs-047288"><g class="clips"></g><clippath id="legend047288"><rect width="104" height="83" x="0" y="0"></rect></clippath></defs><g class="indicatorlayer"></g><g class="layer-above"><g class="imagelayer"></g><g class="shapelayer"></g></g><g class="infolayer"><g class="g-gtitle"></g><g class="legend" pointer-events="all" transform="translate(209.54,60)"><rect class="bg" shape-rendering="crispEdges" style="stroke: rgb(68, 68, 68); stroke-opacity: 1; fill: rgb(255, 255, 255); fill-opacity: 1; stroke-width: 0px;" width="104" height="83" x="0" y="0"></rect><g class="scrollbox" transform="" clip-path="url(&#39;#legend047288&#39;)"><text class="legendtitletext" text-anchor="start" data-unformatted="species" data-math="N" x="2" y="15.600000000000001" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">species</text><g class="groups" transform=""><g class="traces" transform="translate(0,30.1)" style="opacity: 1;"><text class="legendtext" text-anchor="start" x="40" y="4.680000000000001" data-unformatted="setosa" data-math="N" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">setosa</text><g class="layers" style="opacity: 1;"><g class="legendfill"></g><g class="legendlines"></g><g class="legendsymbols"><g class="legendpoints"><path class="scatterpts" transform="translate(20,0)" d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z" style="opacity: 1; stroke-width: 0px; fill: rgb(99, 110, 250); fill-opacity: 1;"></path></g></g></g><rect class="legendtoggle" pointer-events="all" x="0" y="-9.5" width="98.921875" height="19" style="cursor: pointer; fill: rgb(0, 0, 0); fill-opacity: 0;"></rect></g></g><g class="groups" transform=""><g class="traces" transform="translate(0,49.1)" style="opacity: 1;"><text class="legendtext" text-anchor="start" x="40" y="4.680000000000001" data-unformatted="versicolor" data-math="N" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">versicolor</text><g class="layers" style="opacity: 1;"><g class="legendfill"></g><g class="legendlines"></g><g class="legendsymbols"><g class="legendpoints"><path class="scatterpts" transform="translate(20,0)" d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z" style="opacity: 1; stroke-width: 0px; fill: rgb(239, 85, 59); fill-opacity: 1;"></path></g></g></g><rect class="legendtoggle" pointer-events="all" x="0" y="-9.5" width="98.921875" height="19" style="cursor: pointer; fill: rgb(0, 0, 0); fill-opacity: 0;"></rect></g></g><g class="groups" transform=""><g class="traces" transform="translate(0,68.1)" style="opacity: 1;"><text class="legendtext" text-anchor="start" x="40" y="4.680000000000001" data-unformatted="virginica" data-math="N" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 12px; fill: rgb(42, 63, 95); fill-opacity: 1; white-space: pre;">virginica</text><g class="layers" style="opacity: 1;"><g class="legendfill"></g><g class="legendlines"></g><g class="legendsymbols"><g class="legendpoints"><path class="scatterpts" transform="translate(20,0)" d="M3,0A3,3 0 1,1 0,-3A3,3 0 0,1 3,0Z" style="opacity: 1; stroke-width: 0px; fill: rgb(0, 204, 150); fill-opacity: 1;"></path></g></g></g><rect class="legendtoggle" pointer-events="all" x="0" y="-9.5" width="98.921875" height="19" style="cursor: pointer; fill: rgb(0, 0, 0); fill-opacity: 0;"></rect></g></g></g><rect class="scrollbar" rx="20" ry="3" width="0" height="0" style="fill: rgb(128, 139, 164); fill-opacity: 1;" x="0" y="0"></rect></g><g class="g-xtitle"><text class="xtitle" x="110.07894736842105" y="410.8" text-anchor="middle" data-unformatted="sepal_length" data-math="N" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 14px; fill: rgb(42, 63, 95); opacity: 1; font-weight: normal; white-space: pre;">sepal_length</text></g><g class="g-x2title"><text class="x2title" x="176.92105263157896" y="410.8" text-anchor="middle" data-unformatted="sepal_width" data-math="N" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 14px; fill: rgb(42, 63, 95); opacity: 1; font-weight: normal; white-space: pre;">sepal_width</text></g><g class="g-ytitle"><text class="ytitle" transform="rotate(-90,46.559375,133.42105263157896)" x="46.559375" y="133.42105263157896" text-anchor="middle" data-unformatted="sepal_length" data-math="N" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 14px; fill: rgb(42, 63, 95); opacity: 1; font-weight: normal; white-space: pre;">sepal_length</text></g><g class="g-y2title"><text class="y2title" transform="rotate(-90,46.559375,296.5789473684211)" x="46.559375" y="296.5789473684211" text-anchor="middle" data-unformatted="sepal_width" data-math="N" style="font-family: &quot;Open Sans&quot;, verdana, arial, sans-serif; font-size: 14px; fill: rgb(42, 63, 95); opacity: 1; font-weight: normal; white-space: pre;">sepal_width</text></g></g><g class="menulayer"></g><g class="zoomlayer"></g></svg><div class="modebar-container" style="position: absolute; top: 0px; right: 0px; width: 100%;"><div id="modebar-047288" class="modebar modebar--hover ease-bg"><div class="modebar-group"><a rel="tooltip" class="modebar-btn" data-title="Download plot as a png" data-toggle="false" data-gravity="n"><svg viewBox="0 0 1000 1000" class="icon" height="1em" width="1em"><path d="m500 450c-83 0-150-67-150-150 0-83 67-150 150-150 83 0 150 67 150 150 0 83-67 150-150 150z m400 150h-120c-16 0-34 13-39 29l-31 93c-6 15-23 28-40 28h-340c-16 0-34-13-39-28l-31-94c-6-15-23-28-40-28h-120c-55 0-100-45-100-100v-450c0-55 45-100 100-100h800c55 0 100 45 100 100v450c0 55-45 100-100 100z m-400-550c-138 0-250 112-250 250 0 138 112 250 250 250 138 0 250-112 250-250 0-138-112-250-250-250z m365 380c-19 0-35 16-35 35 0 19 16 35 35 35 19 0 35-16 35-35 0-19-16-35-35-35z" transform="matrix(1 0 0 -1 0 850)"></path></svg></a></div><div class="modebar-group"><a rel="tooltip" class="modebar-btn" data-title="Zoom" data-attr="dragmode" data-val="zoom" data-toggle="false" data-gravity="n"><svg viewBox="0 0 1000 1000" class="icon" height="1em" width="1em"><path d="m1000-25l-250 251c40 63 63 138 63 218 0 224-182 406-407 406-224 0-406-182-406-406s183-406 407-406c80 0 155 22 218 62l250-250 125 125z m-812 250l0 438 437 0 0-438-437 0z m62 375l313 0 0-312-313 0 0 312z" transform="matrix(1 0 0 -1 0 850)"></path></svg></a><a rel="tooltip" class="modebar-btn" data-title="Pan" data-attr="dragmode" data-val="pan" data-toggle="false" data-gravity="n"><svg viewBox="0 0 1000 1000" class="icon" height="1em" width="1em"><path d="m1000 350l-187 188 0-125-250 0 0 250 125 0-188 187-187-187 125 0 0-250-250 0 0 125-188-188 186-187 0 125 252 0 0-250-125 0 187-188 188 188-125 0 0 250 250 0 0-126 187 188z" transform="matrix(1 0 0 -1 0 850)"></path></svg></a><a rel="tooltip" class="modebar-btn active" data-title="Box Select" data-attr="dragmode" data-val="select" data-toggle="false" data-gravity="n"><svg viewBox="0 0 1000 1000" class="icon" height="1em" width="1em"><path d="m0 850l0-143 143 0 0 143-143 0z m286 0l0-143 143 0 0 143-143 0z m285 0l0-143 143 0 0 143-143 0z m286 0l0-143 143 0 0 143-143 0z m-857-286l0-143 143 0 0 143-143 0z m857 0l0-143 143 0 0 143-143 0z m-857-285l0-143 143 0 0 143-143 0z m857 0l0-143 143 0 0 143-143 0z m-857-286l0-143 143 0 0 143-143 0z m286 0l0-143 143 0 0 143-143 0z m285 0l0-143 143 0 0 143-143 0z m286 0l0-143 143 0 0 143-143 0z" transform="matrix(1 0 0 -1 0 850)"></path></svg></a><a rel="tooltip" class="modebar-btn" data-title="Lasso Select" data-attr="dragmode" data-val="lasso" data-toggle="false" data-gravity="n"><svg viewBox="0 0 1031 1000" class="icon" height="1em" width="1em"><path d="m1018 538c-36 207-290 336-568 286-277-48-473-256-436-463 10-57 36-108 76-151-13-66 11-137 68-183 34-28 75-41 114-42l-55-70 0 0c-2-1-3-2-4-3-10-14-8-34 5-45 14-11 34-8 45 4 1 1 2 3 2 5l0 0 113 140c16 11 31 24 45 40 4 3 6 7 8 11 48-3 100 0 151 9 278 48 473 255 436 462z m-624-379c-80 14-149 48-197 96 42 42 109 47 156 9 33-26 47-66 41-105z m-187-74c-19 16-33 37-39 60 50-32 109-55 174-68-42-25-95-24-135 8z m360 75c-34-7-69-9-102-8 8 62-16 128-68 170-73 59-175 54-244-5-9 20-16 40-20 61-28 159 121 317 333 354s407-60 434-217c28-159-121-318-333-355z" transform="matrix(1 0 0 -1 0 850)"></path></svg></a></div><div class="modebar-group"><a rel="tooltip" class="modebar-btn" data-title="Zoom in" data-attr="zoom" data-val="in" data-toggle="false" data-gravity="n"><svg viewBox="0 0 875 1000" class="icon" height="1em" width="1em"><path d="m1 787l0-875 875 0 0 875-875 0z m687-500l-187 0 0-187-125 0 0 187-188 0 0 125 188 0 0 187 125 0 0-187 187 0 0-125z" transform="matrix(1 0 0 -1 0 850)"></path></svg></a><a rel="tooltip" class="modebar-btn" data-title="Zoom out" data-attr="zoom" data-val="out" data-toggle="false" data-gravity="n"><svg viewBox="0 0 875 1000" class="icon" height="1em" width="1em"><path d="m0 788l0-876 875 0 0 876-875 0z m688-500l-500 0 0 125 500 0 0-125z" transform="matrix(1 0 0 -1 0 850)"></path></svg></a><a rel="tooltip" class="modebar-btn" data-title="Autoscale" data-attr="zoom" data-val="auto" data-toggle="false" data-gravity="n"><svg viewBox="0 0 1000 1000" class="icon" height="1em" width="1em"><path d="m250 850l-187 0-63 0 0-62 0-188 63 0 0 188 187 0 0 62z m688 0l-188 0 0-62 188 0 0-188 62 0 0 188 0 62-62 0z m-875-938l0 188-63 0 0-188 0-62 63 0 187 0 0 62-187 0z m875 188l0-188-188 0 0-62 188 0 62 0 0 62 0 188-62 0z m-125 188l-1 0-93-94-156 156 156 156 92-93 2 0 0 250-250 0 0-2 93-92-156-156-156 156 94 92 0 2-250 0 0-250 0 0 93 93 157-156-157-156-93 94 0 0 0-250 250 0 0 0-94 93 156 157 156-157-93-93 0 0 250 0 0 250z" transform="matrix(1 0 0 -1 0 850)"></path></svg></a><a rel="tooltip" class="modebar-btn" data-title="Reset axes" data-attr="zoom" data-val="reset" data-toggle="false" data-gravity="n"><svg viewBox="0 0 928.6 1000" class="icon" height="1em" width="1em"><path d="m786 296v-267q0-15-11-26t-25-10h-214v214h-143v-214h-214q-15 0-25 10t-11 26v267q0 1 0 2t0 2l321 264 321-264q1-1 1-4z m124 39l-34-41q-5-5-12-6h-2q-7 0-12 3l-386 322-386-322q-7-4-13-4-7 2-12 7l-35 41q-4 5-3 13t6 12l401 334q18 15 42 15t43-15l136-114v109q0 8 5 13t13 5h107q8 0 13-5t5-13v-227l122-102q5-5 6-12t-4-13z" transform="matrix(1 0 0 -1 0 850)"></path></svg></a></div><div class="modebar-group"><a rel="tooltip" class="modebar-btn" data-title="Toggle Spike Lines" data-attr="_cartesianSpikesEnabled" data-val="on" data-toggle="false" data-gravity="n"><svg viewBox="0 0 1000 1000" class="icon" height="1em" width="1em"><path d="M512 409c0-57-46-104-103-104-57 0-104 47-104 104 0 57 47 103 104 103 57 0 103-46 103-103z m-327-39l92 0 0 92-92 0z m-185 0l92 0 0 92-92 0z m370-186l92 0 0 93-92 0z m0-184l92 0 0 92-92 0z" transform="matrix(1.5 0 0 -1.5 0 850)"></path></svg></a><a rel="tooltip" class="modebar-btn active" data-title="Show closest data on hover" data-attr="hovermode" data-val="closest" data-toggle="false" data-gravity="ne"><svg viewBox="0 0 1500 1000" class="icon" height="1em" width="1em"><path d="m375 725l0 0-375-375 375-374 0-1 1125 0 0 750-1125 0z" transform="matrix(1 0 0 -1 0 850)"></path></svg></a><a rel="tooltip" class="modebar-btn" data-title="Compare data on hover" data-attr="hovermode" data-val="x" data-toggle="false" data-gravity="ne"><svg viewBox="0 0 1125 1000" class="icon" height="1em" width="1em"><path d="m187 786l0 2-187-188 188-187 0 0 937 0 0 373-938 0z m0-499l0 1-187-188 188-188 0 0 937 0 0 376-938-1z" transform="matrix(1 0 0 -1 0 850)"></path></svg></a></div><div class="modebar-group"><a href="https://plotly.com/" target="_blank" data-title="Produced with Plotly" class="modebar-btn plotlyjsicon modebar-btn--logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 132" height="1em" width="1em"><defs><style>.cls-1 {fill: #3f4f75;} .cls-2 {fill: #80cfbe;} .cls-3 {fill: #fff;}</style></defs><title>plotly-logomark</title><g id="symbol"><rect class="cls-1" width="132" height="132" rx="6" ry="6"></rect><circle class="cls-2" cx="78" cy="54" r="6"></circle><circle class="cls-2" cx="102" cy="30" r="6"></circle><circle class="cls-2" cx="78" cy="30" r="6"></circle><circle class="cls-2" cx="54" cy="30" r="6"></circle><circle class="cls-2" cx="30" cy="30" r="6"></circle><circle class="cls-2" cx="30" cy="54" r="6"></circle><path class="cls-3" d="M30,72a6,6,0,0,0-6,6v24a6,6,0,0,0,12,0V78A6,6,0,0,0,30,72Z"></path><path class="cls-3" d="M78,72a6,6,0,0,0-6,6v24a6,6,0,0,0,12,0V78A6,6,0,0,0,78,72Z"></path><path class="cls-3" d="M54,48a6,6,0,0,0-6,6v48a6,6,0,0,0,12,0V54A6,6,0,0,0,54,48Z"></path><path class="cls-3" d="M102,48a6,6,0,0,0-6,6v48a6,6,0,0,0,12,0V54A6,6,0,0,0,102,48Z"></path></g></svg></a></div></div></div><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="325.906" height="450"><g class="hoverlayer"></g></svg></div></div></div></div></div></div></div></div></div></div>
+<footer>
+<script id="_dash-config" type="application/json">{"url_base_pathname": null, "requests_pathname_prefix": "/python-docs-dash-snippets/", "ui": false, "props_check": false, "show_undo_redo": false, "suppress_callback_exceptions": true, "update_title": "Updating..."}</script>
+<script src="./polyfill@7.v1_9_0m1611082192.8.7.min.js.download"></script>
+<script src="./react@16.v1_9_0m1611082192.14.0.min.js.download"></script>
+<script src="./react-dom@16.v1_9_0m1611082192.14.0.min.js.download"></script>
+<script src="./prop-types@15.v1_9_0m1611082192.7.2.min.js.download"></script>
+<script src="./dash_html_components.v1_1_2m1611087126.min.js.download"></script>
+<script src="./dash_cytoscape.v0_2_0m1638901428.min.js.download"></script>
+<script src="./bundle.v4_11_2m1611087174.js.download"></script>
+<script src="./dash_core_components.v1_15_0m1611086582.min.js.download"></script>
+<script src="./dash_core_components-shared.v1_15_0m1611086582.js.download"></script>
+<script src="./bundle.v0_7_1m1627349737.js.download"></script>
+<script src="./dash_daq.v0_5_0m1587997219.min.js.download"></script>
+<script src="./highlight.pack.js.download"></script>
+<script src="./dash_renderer.v1_9_0m1611082209.min.js.download"></script>
+<script id="_dash-renderer" type="application/javascript">var renderer = new DashRenderer();</script>
+</footer>
+
+<svg id="js-plotly-tester" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute; left: -10000px; top: -10000px; width: 9000px; height: 9000px; z-index: 1;"><path class="js-reference-point" d="M0,0H1V1H0Z" style="stroke-width: 0; fill: black;"></path></svg></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

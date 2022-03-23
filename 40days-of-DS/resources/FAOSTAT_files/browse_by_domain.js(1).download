@@ -1,0 +1,47 @@
+/*global define*/
+define(['jquery', 'i18n!nls/common'], function ($, I18N) {
+
+    'use strict';
+
+    return $.extend(true, {}, I18N, {
+        
+        "tab_ghg_main": "1961-present",
+        "projections": "Projections",
+        "emissions" : "Emissions",
+        "gas_co2" : "CO<sub>2</sub>",
+        "gas_n2o" : "N<sub>2</sub>O",
+        "gas_ch4" : "CH<sub>4</sub>",
+        "missing_view": "There is no view available for this domain yet.<br>We apologize for any inconvenience.",
+        "tab_macro_indicators_value_usd": "Value US$",
+        "tab_macro_indicators_share": "Share of GDP",
+        "em_total_ghg_ar5" : "Total GHG (AR5)",
+        "em_total_ghg_ar4" : "Total GHG (AR4)",
+        "em_total_ghg_sar" : "Total GHG (SAR)",
+        em_co2 : "CO<sub>2</sub>",
+        em_n2o : "N<sub>2</sub>O",
+        em_ch4 : "CH<sub>4</sub>",
+        em_fgas : "F-Gases",
+        gw_total_ghg_ar5: "Total GHG (AR5)",
+        gw_total_ghg_ar4: "Total GHG (AR4)",
+        gw_total_ghg_sar: "Total GHG (SAR)",
+        gw_co2 : "CO<sub>2</sub>",
+        gw_n2o : "N<sub>2</sub>O",
+        gw_ch4 : "CH<sub>4</sub>",
+        gtr_total_ghg_ar5: "Total GHG (AR5)",
+        gtr_total_ghg_ar4: "Total GHG (AR4)",
+        gtr_total_ghg_sar: "Total GHG (SAR)",
+        gtr_co2 : "CO<sub>2</sub>",
+        gtr_n2o : "N<sub>2</sub>O",
+        gtr_ch4 : "CH<sub>4</sub>",        
+        gt_co2eq : "CO<sub>2</sub>eq (AR5)",
+        gt_co2 : "CO<sub>2</sub>",
+        gt_n2o : "N<sub>2</sub>O",
+        gt_ch4 : "CH<sub>4</sub>",    
+        gm_ch4 : "CH<sub>4</sub>",
+        gm_n2o : "N<sub>2</sub>O",    
+        gn_co2 : "CO<sub>2</sub>",
+        gn_ch4 : "CH<sub>4</sub>",
+        gn_n2o : "N<sub>2</sub>O"
+    });
+
+});

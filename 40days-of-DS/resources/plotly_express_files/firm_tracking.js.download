@@ -1,0 +1,217 @@
+(function(w) {
+  var config = {"metricsLabels":{"contentBoards":"TR Content Board","personalizations":"TR Personalization","audiences":"TR Audience","campaigns":"TR Campaign"},"hitTypes":{"contentBoards":"event","audiences":"event","personalizations":"event","campaigns":"event"},"shouldTrackOrgAssets":false,"firmTrackProvider":"custom","triblioVisitorId":"Xzqe6GfCDiCGp56gXqSoDT1c"};
+  var triblioVisitorId = config.triblioVisitorId;
+  var firmographicRecord =  {"name":"Narrowband Hsi Pool For Rawalpindi 1 2","sicCode":"N/A","isIsp":"N/A","employees":"N/A","revenue":"N/A","city":"N/A","region":"N/A","country":"N/A","domain":"N/A","naicCode":"N/A","employeesCode":"N/A","revenueCode":"N/A","industry":null,"subIndustry":null};
+  var shouldTrackOrgAssets = config.shouldTrackOrgAssets;
+  var eIdsToNames = {"personalizations":{},"campaigns":{},"contentHubs":{},"audiences":{"vD8Q":"CI Security Accounts"}};
+
+  /*some ppl want our visitor id available immediately ie GE with Adobe Analyitcs
+  GE wants to use a custom firm track to post to adobe and GA. Adding this storage set here
+  because it doesnt hurt. */
+  if(sessionStorage && sessionStorage.setItem){
+    sessionStorage.setItem("s_triblio_visitor_id", triblioVisitorId);
+  }
+
+  if(!w.Triblio){ w.Triblio = {}; }
+  if(w.Triblio.onAccountIdentificationReady){ w.Triblio.onAccountIdentificationReady(firmographicRecord); }
+  w.Triblio.getAccountIdentification = function(){
+    return firmographicRecord;
+  };
+
+  if(!w.TriblioAssetNameTracking) w.TriblioAssetNameTracking = {queued:[]};
+
+  var CustomTracker = function(){};
+
+  CustomTracker.prototype.run = function(){
+    this.postFirmographicData();
+    this.checkAssetNamesQueue();
+  };
+
+  CustomTracker.prototype.postFirmographicData = function(){
+    var data = {"name":"Narrowband Hsi Pool For Rawalpindi 1 2","sicCode":"N/A","isIsp":"N/A","employees":"N/A","revenue":"N/A","city":"N/A","region":"N/A","country":"N/A","domain":"N/A","naicCode":"N/A","employeesCode":"N/A","revenueCode":"N/A","industry":null,"subIndustry":null};
+var blocked = [
+"cision",
+"alfresco",
+"interfolio",
+  "zimbra",
+  "safetyculture",
+  "optimahcs",
+  "prezi",
+  "pandadoc",
+  "pantheon",
+  "healthleadersmedia",
+  "uptake",
+  "americantower",
+  "omniupdate",
+  "yellowfin",
+  "surescripts",
+  "zayo",
+  "paycor",
+  "visioncritical",
+  "experticity",
+  "amexglobalbusinesstravel",
+  "construction",
+  "careerbuilder",
+  "peoplenet",
+  "naturalinsight",
+  "tintri"
+];
+
+if (new RegExp(blocked.join("|")).test(location.hostname)) {
+  console.log(
+    "Your traffic analysis period is over. Please remove this script."
+  );
+} else {
+  /* console.log("Triblio initiated"); */
+  var count = 0;
+
+  function waitForGA(hadToAppendGAScript) {
+    var wait = setInterval(function() {
+      var type = typeofGA();
+
+      if (type) {
+        checkAndPostToGA(type);
+        clearInterval(wait);
+      } else if (count > 15 && !hadToAppendGAScript) {
+        /* try setting up google-analytics.js script */
+        (function(i, s, o, g, r, a, m) {
+          i["GoogleAnalyticsObject"] = r;
+          (i[r] =
+            i[r] ||
+            function() {
+              (i[r].q = i[r].q || []).push(arguments);
+            }),
+            (i[r].l = 1 * new Date());
+          (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m);
+        })(
+          window,
+          document,
+          "script",
+          "https://www.google-analytics.com/analytics.js",
+          "ga"
+        );
+
+        count = 0;
+        clearInterval(wait);
+        waitForGA(true);
+      } else if (count > 15 && hadToAppendGAScript) {
+        clearInterval(wait);
+      }
+
+      count++;
+    }, 100);
+  }
+
+  function typeofGA() {
+    if (typeof ga === "function") {
+      return "ga";
+    } else if (typeof __gaTracker === "function") {
+      return "_gaTracker";
+    } else return null;
+  }
+
+  function checkAndPostToGA(type) {
+    var trackingId = "UA-45657726-2";
+
+    /* newer method */
+    if (type === "ga") {
+      /* console.log("ga method found"); */
+      ga(function(tracker) {
+        ga("create", trackingId, "auto", "triblio");
+        /* console.log(trackingId + " created"); */
+        ga("triblio.set", "dimension1", data.name);
+        ga("triblio.set", "dimension2", data.revenue);
+        ga("triblio.set", "dimension3", data.naicCode);
+        ga("triblio.set", "dimension4", data.employees);
+        ga("triblio.set", "dimension5", data.domain);
+        ga("triblio.set", "dimension6", data.industry);
+        ga("triblio.set", "dimension7", data.subIndustry);
+        ga("triblio.send", "pageview");
+        /* console.log("data posted for " + data.name); */
+        console.log("Success");
+      });
+    } else if (type === "_gaTracker") {
+      /* older method */
+      __gaTracker("create", trackingId, "auto", "triblio");
+      /* console.log(trackingId + " created"); */
+      __gaTracker("triblio.set", "dimension1", data.name);
+      __gaTracker("triblio.set", "dimension2", data.revenue);
+      __gaTracker("triblio.set", "dimension3", data.naicCode);
+      __gaTracker("triblio.set", "dimension4", data.employees);
+      __gaTracker("triblio.set", "dimension5", data.domain);
+      __gaTracker("triblio.set", "dimension6", data.industry);
+      __gaTracker("triblio.set", "dimension7", data.subIndustry);
+      __gaTracker("triblio.send", "pageview");
+      /* console.log("data posted for " + data.name); */
+      console.log("Success.");
+    }
+  }
+
+  waitForGA();
+}
+  };
+
+  CustomTracker.prototype.checkAssetNamesQueue = function(){
+    var that = this;
+
+    if(w.TriblioAssetNameTracking.queued){
+      w.TriblioAssetNameTracking.queued.forEach(function(ids){
+        that.postAssetNames(ids);
+      });
+    }
+  };
+
+  CustomTracker.prototype.postAssetNames = function(ids){
+    if(shouldTrackOrgAssets){
+      /*
+        user needs to handle waiting for third party analytics library to load if necessary
+      */
+      var data = _getAssetNamesFromIds(ids);
+
+      data.forEach(function(d){
+      ga("send",{
+        "hitType": d.hitType,
+        "eventCategory": d.metricsLabel,
+        "eventLabel": d.name
+      });
+    });
+  
+    }
+  };
+
+  function _getAssetNamesFromIds(data){
+    var lookup = eIdsToNames;
+    if(!lookup || !Object.keys(lookup).length){
+      lookup = {personalizations:{}, contentHubs: {}, audiences:{}, campaigns:{}};
+    }
+    var names = [];
+
+    if(data.type !== "board" && data.personalizationId && data.audienceSegmentId && data.campaignId){
+      var personalizationIds = data.personalizationId.split(",");
+      var audienceSegmentIds = data.audienceSegmentId.split(",");
+      var campaignIds = data.campaignId.split(",");
+
+      personalizationIds.forEach(function(pId, index){
+        var hasPersonalization = (personalizationIds[index] && lookup.personalizations[personalizationIds[index]]) ? true : false;
+        var hasAudience = (audienceSegmentIds[index] && lookup.audiences[audienceSegmentIds[index]]) ? true : false;
+        var hasCampaign = (campaignIds[index] && lookup.campaigns[campaignIds[index]]) ? true : false;
+
+        names.push({
+          campaign: lookup.campaigns[campaignIds[index]],
+          audience: lookup.audiences[audienceSegmentIds[index]],
+          personalization: lookup.personalizations[personalizationIds[index]],
+          action: data.action //impression or click
+        });
+      });
+    }
+    return names;
+  }
+
+  var tracker = new CustomTracker();
+  w.TriblioAssetNameTracking.postAssetNames = tracker.postAssetNames;
+
+  tracker.run();
+}(window));

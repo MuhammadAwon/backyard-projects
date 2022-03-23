@@ -1,0 +1,90 @@
+/*global define, document*/
+define([
+    'jquery',
+    'loglevel',
+    'underscore.string',
+    'amplify'
+], function ($, log, _s) {
+
+    'use strict';
+
+    return {
+
+        "URL_API": "https://fenixservices.fao.org/faostat/api/v1/",
+        "LOGLEVEL": "silent", // trace/debug/info/warn/error/silent
+        "API_LOG": false,
+
+        banner: {
+            visible: false,
+            type: "info", // warning info error "null"
+            message_en: "Please note there may be a short interruption of service for FAOSTAT between 11:00 and 13:00 CET on Tuesday 30 March",
+            message_fr: "Veuillez noter qu'il peut y avoir une brève interruption de service pour FAOSTAT entre 11h00 et 13h00 CET le mardi 30 mars",
+            message_es: "Por favor tenga en cuenta que puede haber una breve interrupción del servicio de FAOSTAT este martes 30 de marzo, entre las 11:00 y las 13:00 horas.",       
+            alwaysVisible: true,
+            from : 1605096000000,
+            to : 1605099600000
+        },
+
+        // Google Analytics ID
+        "GOOGLE_ANALYTICS": [
+            {
+                ID: "UA-68486942-1",
+                NAME: "FAOSTAT-PRODUCTION"
+            },
+
+            {
+                ID: "UA-16957842-1",
+                NAME: "fao.org"
+            },
+            {
+                ID: "UA-16796074-1",
+                NAME: "allTracker"
+            },
+            {
+                ID: "UA-16957552-1",
+                NAME: "allSites"
+            }
+
+        ],
+
+        "GOOGLE_ANALYTICS_TRACKER":"/faostat/",
+
+        // URLs
+        "URL_RELEASE_CALENDAR": 'https://fenixservices.fao.org/faostat/static/releasecalendar/Default.aspx',
+        "URL_FEEDBACK_SYSTEM": 'http://fenixapps2.fao.org/feedbacksystem',
+
+        "JIRA_COLLECTOR": {
+            "ENABLED": false
+        },
+
+        // EMAIL and TELEPHONE
+        "EMAIL_FAO_STATISTICS": "FAO-statistics@fao.org",
+        "TELEPHONE_FAO_STATISTICS": "+39 06 570 55303",
+
+        //Chaplin JS configuration
+        CHAPLINJS_CONTROLLER_SUFFIX: '-controller',
+        CHAPLINJS_PROJECT_ROOT: '',
+        CHAPLINJS_PUSH_STATE: false,
+        CHAPLINJS_SCROLL_TO: true,
+        CHAPLINJS_APPLICATION_TITLE: "FAOSTAT",
+
+        DATE_UPDATE: "Mon Jan 17 2022 08:53:47",
+        VERSION: "0.0.1",
+
+        ALL_LANGUAGES: true,
+
+        // ####### External configuration #########
+
+        "URL_FAOSTAT_DOCUMENTS_BASEPATH": 'https://fenixservices.fao.org/faostat/static/documents/', // Related documents in data section
+
+        URL_DB_DESCRIPTION : "https://fenixservices.fao.org/faostat/static/bulkdownloads", // Db description
+
+        syb: {
+            url: 'http://faostat.fao.org/static/syb/syb_{{code}}.pdf', // Country profile download
+            //url_world: 'https://fenixservices.fao.org/faostat/static/documents/CountryProfile/pdf/syb_5000.pdf'
+            url_world: 'http://faostat.fao.org/static/syb/syb_5000.pdf' // Country world download
+        }
+
+    };
+
+});

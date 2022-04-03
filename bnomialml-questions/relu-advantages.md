@@ -8,7 +8,7 @@ The best path forward is to prepare a list with some of advantages of ReLU. This
 
 Daniella prepares an initial draft, but she would like some help reviewing it right before sending it.
 
-**Which of the following are advantages of using the ReLU?
+**Which of the following are advantages of using the ReLU?**
 
 - [ ]  ReLU saturates around extreme values, allowing backpropagation to converge faster and helping the network learn.
 - [x]  ReLU provides better representational sparsity than the *sigmoid* and *tanh* activation functions because it can produce an actual zero output.

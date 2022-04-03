@@ -17,7 +17,7 @@ Daniella prepares an initial draft, but she would like some help reviewing it ri
 
 ## Let's take a look at the correct answer.
 
-The first thing we need to do is remember that ReLU is a linear function that outputs the input directly if is positive or outputs zero otherwise:
+The first thing we need to do is remember that ReLU is a linear function that outputs the input directly if it is positive or outputs zero otherwise:
 `f(x) = max(0, x)`
 
 The first choice argues that ReLU saturates around extreme values, which is incorrect. Other activation functions like *sigmoid* saturate around `0` and `1`, and *tanh* around `-1` and `1`, but ReLU works differently.

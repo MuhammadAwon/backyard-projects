@@ -8,7 +8,7 @@ The team knew that.
 
 After studying the problem before them for a few days, they knew they needed to select a few regression models to start experimenting.
 
-**Which of the following are regression models that the team could consider to start their exploration phase?
+**Which of the following are regression models that the team could consider to start their exploration phase?**
 
 - [x] Linear Regression
 - [x] Ploynomila Regression

@@ -26,5 +26,5 @@ The distribution's tails are the areas of the graph that start tapering off. A l
 Therefore, the only incorrect choice for this question is the second one.
 
 ## References
-  * [Histogram](https://en.wikipedia.org/wiki/Histogram)
+* [Histogram](https://en.wikipedia.org/wiki/Histogram)
 * [Histograms](https://www.cuemath.com/data/histograms/)

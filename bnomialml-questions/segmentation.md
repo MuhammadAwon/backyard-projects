@@ -10,10 +10,10 @@ The problem is that Ted is unsure about the best approach. Should he segment cus
 
 **How would you approach this problem if you were in Ted's shoes?**
 
-- Use an unsupervised learning algorithm to produce potentially interesting ways to segment the customers.
-- Define beforehand a few segments, and train a supervised learning algorithm to classify every customer into one of them.
-- Use a supervised learning algorithm to produce potentially interesting ways to segment the customers.
-- Use a semi-supervised learning algorithm to process the data, thus taking advantage of both supervised and unsupervised techniques.
+- [x] Use an unsupervised learning algorithm to produce potentially interesting ways to segment the customers.
+- [ ] Define beforehand a few segments, and train a supervised learning algorithm to classify every customer into one of them.
+- [ ] Use a supervised learning algorithm to produce potentially interesting ways to segment the customers.
+- [ ] Use a semi-supervised learning algorithm to process the data, thus taking advantage of both supervised and unsupervised techniques.
 
 ## Answer
 

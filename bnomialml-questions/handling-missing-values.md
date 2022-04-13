@@ -15,7 +15,7 @@ The team lead called a special meeting to discuss their next steps, and after so
 - [x] Predict the missing values using a separate machine learning model.
 - [x] Using machine learning algorithms that are robust to missing values.
 
-## Answer!
+## Answer
 
 Replacing missing values with the mean, median, mode, or any other imputation techniques are valid approaches to handle this problem. Imputation is very common, and the specific way to go depends on the particular situation. Therefore, the first choice is correct.
 
@@ -28,6 +28,7 @@ Finally, the fourth choice is also correct. We can use a particular implementati
 In summary, all four choices are correct.
 
 ## References
+
 - [How to Handle Missing Data with Python](https://machinelearningmastery.com/handle-missing-data-python/)
 - [Imputation of missing values by scikit-learn](https://scikit-learn.org/stable/modules/impute.html#imputation-of-missing-values)
 - [Handling Missing Values](https://www.kaggle.com/dansbecker/handling-missing-values)

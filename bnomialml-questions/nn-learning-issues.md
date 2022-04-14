@@ -17,7 +17,7 @@ After a couple of hours, Jena has come up with a few potential reasons for the s
 - [x] The neural network is getting stuck at local minima.
 - [ ] Jena is using a learning rate that's too high.
 
-## Answer!
+## Answer
 
 Many factors can cause problems during training. Let's discuss some of the more common ones.
 

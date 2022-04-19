@@ -30,9 +30,9 @@ The second choice talks about a function that returns the index of the largest v
 
 If we run a vector through the `argmax` function we will get the index of the largest value in the vector. From a probabilistic perspective, the largest value will be assigned `1` while every other value will be assigned `0`.
 
-Softmax is a softer version of this function. Instead of returning `1` for the largest value and `0` for everything else, softmax returns a probability proportional to each value in the vector. This makes the third choice the correct answer to this question.
+Softmax is a softer version of this function. Instead of returning `1` for the largest value and `0` for everything else, softmax returns a probability proportional to each value in the vector. This makes the second choice the correct answer to this question.
 
-Finally, notice that the fourth choice is similar to the third one, but it talks about the "vector's maximum value." This would be a `max` function, not an `argmax`.
+Finally, notice that the fourth choice is similar to the second one, but it talks about the "vector's maximum value." This would be a `max` function, not an `argmax`.
 
 Running a vector through the `max` function returns the maximum value in that vector, not the index of where that value is located. From a probabilistic perspective, having the maximum value will not help create a vector of probabilities that sum up to 1, so the fourth choice is not a correct answer.
 

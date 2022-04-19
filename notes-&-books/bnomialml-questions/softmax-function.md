@@ -37,5 +37,6 @@ Finally, notice that the fourth choice is similar to the third one, but it talks
 Running a vector through the `max` function returns the maximum value in that vector, not the index of where that value is located. From a probabilistic perspective, having the maximum value will not help create a vector of probabilities that sum up to 1, so the fourth choice is not a correct answer.
 
 ## References
+
 - [Softmax Activation Function with Python](https://machinelearningmastery.com/softmax-activation-function-with-python/)
 - [What is the Softmax Function](https://deepai.org/machine-learning-glossary-and-terms/softmax-layer)

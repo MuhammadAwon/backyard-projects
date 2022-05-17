@@ -12,8 +12,8 @@ Kiara's question to her team was simple:
 **Which of the following activation functions am I using in this network?**
 
 - [ ] Kiara is using the sigmoid activation function.
-- [ ] Kiara is using the Rectified Linear Unit activation function.
-- [x] Kiara is using the Leaky Rectified Linear Unit activation function.
+- [x] Kiara is using the Rectified Linear Unit activation function.
+- [ ] Kiara is using the Leaky Rectified Linear Unit activation function.
 - [ ] None of the above activation functions can produce this output.
 
 ## Answers

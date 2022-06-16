@@ -1,3 +1,5 @@
+# CLASS and INSTANCES
+
 # it will be cumbersome if we want to create more of the following objects
 # also it'll be more error-prone
 # position, name, age, level, salary (a list a list of people job description)

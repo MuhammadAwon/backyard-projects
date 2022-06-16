@@ -1,3 +1,5 @@
+# INHERITANCE and PLOYMORPHISM
+
 # parent class
 class Employee:
     def __init__(self, name, age, salary):

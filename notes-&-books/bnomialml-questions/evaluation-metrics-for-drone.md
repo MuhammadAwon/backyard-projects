@@ -8,10 +8,10 @@ It would help if she had some solid evaluation of the model's performance to com
 
 **Which evaluation metrics should Rouse use to evaluate her model?**
 
-- [] Recall
-- [] ROC Curve
-- [] Precision-Recall Curve
-- [] F1 score
+- [ ] Recall
+- [ ] ROC Curve
+- [x] Precision-Recall Curve
+- [x] F1 score
 
 ## Answer
 
